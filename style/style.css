@@ -6,12 +6,18 @@ body{
     background-color: #dcdad7;
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #bandeau{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     background-color: #181a1b;
-    height: 48px;
+    height: 30px;
     width: 100%;
+    color : white;
 }
 
 #Menu_Crocs{
@@ -20,7 +26,6 @@ body{
     border-bottom: #303232 1px solid;
     display: flex;
     flex-direction: row;
-    padding-left: 30px;
     align-items: center;
     font-weight: bold;
 
@@ -30,17 +35,21 @@ body{
 #promo{
     display: flex;
     flex-direction: row;
-    border-right: #303232 1px solid;
+
     height: 72px;
     align-items: center;
     padding-right: 30px;
+    padding-left: 30px;
 }
 #promo:hover{
     color: rgb(38, 80, 98);
     transition : 0.2s;
 }
 #logo{
-    height: 72px;
-    width: 72px;
-    margin-right: 30px;
+    margin-left: 40px;
+    height: 35px;
+    width:160px;
+    background-image: url("img/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }

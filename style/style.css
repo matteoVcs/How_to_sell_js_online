@@ -35,15 +35,14 @@ body{
 #promo{
     display: flex;
     flex-direction: row;
-
     height: 72px;
     align-items: center;
     padding-right: 30px;
     padding-left: 30px;
 }
-#promo:hover{
+.name:hover{
     color: rgb(38, 80, 98);
-    transition : 0.2s;
+    transition : 0.4s;
 }
 #logo{
     margin-left: 40px;
@@ -52,4 +51,10 @@ body{
     background-image: url("img/logo.png");
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+
+
+#profil{
+
 }

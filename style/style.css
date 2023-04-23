@@ -55,6 +55,25 @@ body{
 
 
 
-#profil{
 
+#like{
+    margin-left: 40px;
+    height: 35px;
+    width:35px;
+    background-image: url("img/coeur.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 1300px;
+}
+
+#panier{
+    margin-left: 40px;
+    height: 35px;
+    width:35px;
+    background-image: url("img/panier.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 1310px;
 }

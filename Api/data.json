@@ -1,0 +1,165 @@
+{
+    "crocs": [
+        {
+            "id": 1,
+            "name": "Classic Clog",
+
+            "price": 39.99,
+            "colors": "yellow;black;white",
+            "reduction": 20,
+            "img_1": "Crocs/Classic_Clog/Classic_clog_bleu1.webp;Crocs/Classic_Clog/Classic_clog_bleu2.webp;Crocs/Classic_Clog/Classic_clog_bleu3.webp",
+            "img_2": "Crocs/Classic_Clog/Classic_clog_black1.webp;Crocs/Classic_Clog/Classic_clog_black2.webp;Crocs/Classic_Clog/Classic_clog_black3.webp",
+            "img_3": "Crocs/Classic_Clog/Classic_clog_white1.webp;Crocs/Classic_Clog/Classic_clog_white2.webp;Crocs/Classic_Clog/Classic_clog_white3.webp",
+            "available": true,
+            "sizes": "36;37;38;38;39;40;41;42;43;44;45;46;47;48;49"
+        },
+        {
+            "id": 2,
+            "name": "Crush Clog",
+            "price": 69.99,
+            "colors": "pink;black;white",
+            "reduction": 30,
+            "img_1": "Crocs/Crush_Clog/Crush_clog_pink1.webp;Crocs/Crush_Clog/Crush_clog_pink2.webp;Crocs/Crush_Clog/Crush_clog_pink3.webp",
+            "img_2": "Crocs/Crush_Clog/Crush_clog_black1.webp;Crocs/Crush_Clog/Crush_clog_black2.webp;Crocs/Crush_Clog/Crush_clog_black3.webp",
+            "img_3": "Crocs/Crush_Clog/Crush_clog_white1.webp;Crocs/Crush_Clog/Crush_clog_white2.webp;Crocs/Crush_Clog/Crush_clog_white3.webp",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46:47;48;49"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 3,
+            "name": "Classic Cozzy Sandal",
+            "price": 59.99,
+            "colors": "garnet;black;white",
+            "reduction": 20,
+            "img_1": "Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_garnet1.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_garnet2.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_garnet3.webp",
+            "img_2": "Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_black1.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_black2.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_black3.webp",
+            "img_3": "Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_white1.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_white2.webp;Crocs/Classic_Cozzy_Sandal/Classic_cozzy_sandal_white3.webp",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46;47;48;49"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 4,
+            "name": "Classic Crocs Sandal",
+            "price": 34.99,
+            "colors": "papaya;black;white",
+            "reduction": 20,
+            "img_1": "crocs/croc4/img1.jpg",
+            "img_2": "",
+            "img_3": "",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46;47;48;49"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 5,
+            "name": "Women's Classic Platform Clog",
+            "price": 59.99,
+            "colors": "banana;black;white",
+            "reduction": 20,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46;47;48;49"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 6,
+            "name": "Kids' Classic Lined Spray Dye Neo Puff Boot",
+            "price": 64.99,
+            "colors": "black;white",
+            "reduction": 40,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "28;29;30;31;32;33;34;35;36;37;38;39"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 7,
+            "name": "Kids’ Baya Lined Clog",
+            "price": 49.99,
+            "colors": "charcoal;black;white",
+            "reduction": 20,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "28;29;30;31;32;33;34;35"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 8,
+            "name": "Kids’ Baya Printed Lined Clog",
+            "price": 49.99,
+            "colors": "white;pink;",
+            "reduction": 20,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "22;23;24;25;26;27;28;29;30;31;32;33;34;35"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 9,
+            "name": "Toddler Classic Denim Clog",
+            "price": 39.99,
+            "colors": "white",
+            "reduction": 30,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "19;20;21;22;23;24;25;26;27;28"
+        },
+        {
+            "_comment": "pas les bonnes images",
+            "id": 10,
+            "name": "Classic Bandana Clog",
+            "price": 54.99,
+            "colors": "multi",
+            "reduction": 30,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46;47;48;49"
+        }
+        {
+            "_comment": "pas les bonnes images",
+            "id": 10,
+            "name": "Classic Bandana Clog",
+            "price": 54.99,
+            "colors": "multi",
+            "reduction": 30,
+            "img_1": "crocs/croc5/img1.jpg",
+            "img_2": "crocs/croc5/img2.jpg",
+            "img_3": "crocs/croc5/img3.jpg",
+            "available": true,
+            "sizes": "36;37;38;39;40;41;42;43;44;45;46;47;48;49"
+        }
+    ],
+    "category": [
+        {
+            "id": 0,
+            "name": "Promo"
+        },
+        {
+            "id": 1,
+            "name": "Femme"
+        },
+        {
+            "id": 2,
+            "name": "Homme"
+        },
+        {
+            "id": 3,
+            "name": "Spécial"
+        }
+    ]
+    
+  }

@@ -32,7 +32,7 @@ function getCrocs() {
         let crocctn = document.createElement("div");
         crocctn.classList.add("croc-item");
         crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1}" />
+        <img class="croc-img" src="${croc.img_1[1]}" />
         <div class="nom-croc"> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>

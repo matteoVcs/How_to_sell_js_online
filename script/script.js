@@ -129,7 +129,7 @@ function loadcart() {
         let crocCart = document.createElement("div");
         crocCart.classList.add("cart-item");
         crocCart.innerHTML = `
-        <img class="cart-croc-img" src="${croc.img_1}" />
+        <img class="cart-croc-img" src="${croc.img_1[0]}" />
         <div> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="removefromcard(${croc.id})"> Supprimer </button>

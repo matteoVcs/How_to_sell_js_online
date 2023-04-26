@@ -30,16 +30,27 @@ function getCrocs() {
     console.log(filteredCrocs);
     filteredCrocs.forEach(croc => {
         let crocctn = document.createElement("div");
+        let i = 0;
         crocctn.classList.add("croc-item");
         crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[0]}" />
+        <img class="croc-img" src="${croc.img_1[i]}" />
         <div class="nom-croc"> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
+        <a href="details.html" class="crocsDetails">détails</a>
         `;
+        
         container.appendChild(crocctn);
-
+        crocctn.onmouseover = function() {
+            this.style.backgroundColor = "red";
+            i = 1;
+        }
+        crocctn.onmouseleave = function() {
+            this.style.backgroundColor = "yellow";
+            i = 0;
+        }
     });
+
 }
 
 //Filtrage

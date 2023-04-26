@@ -77,3 +77,16 @@ body{
     position: relative;
     left: 1310px;
 }
+
+#accueil_redirect{
+    display: flex;
+    
+}
+
+.img_accueil{
+    height: 510px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

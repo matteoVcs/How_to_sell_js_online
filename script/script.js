@@ -1,7 +1,6 @@
 const url = "http://localhost:3000";
 const container = document.querySelector(".ctn-crocs");
 const pickers = document.querySelectorAll(".picker");
-
 let crocs;
 let filteredCrocs;
 
@@ -44,10 +43,14 @@ function getCrocs() {
         crocctn.onmouseover = function() {
             this.style.backgroundColor = "red";
             i = 1;
+            document.getElementsByClassName("croc-img")[].src = croc.img_1[i];
+            
         }
         crocctn.onmouseleave = function() {
-            this.style.backgroundColor = "yellow";
+            this.style.backgroundColor = "white";
             i = 0;
+            document.getElementsByClassName("croc-img")[this].src = croc.img_1[i];
+
         }
     });
 

@@ -81,8 +81,8 @@ body{
     background-image: url("img/coeur.png");
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
-    left: 1300px;
+    position: absolute;
+    left: 88%;
 }
 
 #panier{
@@ -92,8 +92,8 @@ body{
     background-image: url("img/panier.png");
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
-    left: 1310px;
+    position: absolute;
+    left: 93%;
 }
 
 #accueil_redirect{
@@ -106,8 +106,8 @@ body{
 }
 
 .img_accueil{
-    height: 510px;
-    width: auto;
+    height: 50%;
+    width: 50%;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;

@@ -28,32 +28,60 @@ function getCrocs() {
     container.innerHTML = "";
     console.log(filteredCrocs);
     filteredCrocs.forEach(croc => {
-        let crocctn = document.createElement("div");
-        let i = 0;
+        var crocctn = document.createElement("div");
         crocctn.classList.add("croc-item");
-        crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[i]}" />
+        if (croc.colors.length == 3) {
+            crocctn.innerHTML = `
+        <img class="croc-img" src="${croc.img_1[0]}" />
         <div class="nom-croc"> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-        <a href="details.html" class="crocsDetails">détails</a>
+        <a href="details.html" target="blank" class="crocsDetails">détails</a>
+        <div class ="color-picker-ctn">
+        <div class=" picker round ${croc.colors[0]}"></div>
+        <div class=" picker round ${croc.colors[1]}"></div>
+        <div class=" picker round ${croc.colors[2]}"></div>
+        </div>
         `;
+        }else if (croc.colors.length == 2) {
+            crocctn.innerHTML = `
+        <img class="croc-img" src="${croc.img_1[0]}" />
+        <div class="nom-croc"> ${croc.name} </div>
+        <div> ${croc.price}€ </div>
+        <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
+        <a href="details.html" target="blank" class="crocsDetails">détails</a>
+        <div class ="color-picker-ctn">
+            <div class=" picker round ${croc.colors[0]}"></div>
+            <div class=" picker round ${croc.colors[1]}"></div>
+        </div>
+        `;
+        }else if (croc.colors.length == 1) {
+            crocctn.innerHTML = `
+        <img class="croc-img" src="${croc.img_1[0]}" />
+        <div class="nom-croc"> ${croc.name} </div>
+        <div> ${croc.price}€ </div>
+        <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
+        <a href="details.html" target="blank" class="crocsDetails">détails</a>
+        <div class ="color-picker-ctn">
+            <div class=" picker round ${croc.colors[0]}"></div>
+        </div>
+        `;
+        }
+
+
         
-        container.appendChild(crocctn);
+        
         crocctn.onmouseover = function() {
-            this.style.backgroundColor = "red";
-            i = 1;
-            document.getElementsByClassName("croc-img")[].src = croc.img_1[i];
+            document.getElementsByClassName("croc-img")[croc.id-1].src = croc.img_1[1];
+                }
+        crocctn.onmouseleave = function() {
+            document.getElementsByClassName("croc-img")[croc.id-1].src = croc.img_1[0];
             
         }
-        crocctn.onmouseleave = function() {
-            this.style.backgroundColor = "white";
-            i = 0;
-            document.getElementsByClassName("croc-img")[this].src = croc.img_1[i];
-
-        }
+        
+        let crocImg = document.getElementsByClassName("croc-img");
+        container.appendChild(crocctn);
     });
-
 }
 
 //Filtrage
@@ -82,7 +110,7 @@ function FilterByColor(color) {
         filteredCrocs = crocs;
         getCrocs();
     } else {
-        filteredCrocs = crocs.filter((croc) => croc.colors === color);
+        filteredCrocs = crocs.filter((croc) => croc.colors[0] === color || croc.colors[1] === color || croc.colors[2] === color);
         if (filteredCrocs.length <= 0) {
             container.innerHTML = "Aucun résultat";
         } else {

@@ -22,11 +22,42 @@ body{
     align-items: center;
 }
 
-.blue{background-color: blue;}
+.banana{background-color: #F5EDBC;}
 .red{background-color: red;}
 .white{background-color: white;}
 .black{background-color: black;}
+.navy{background-color: navy;}
+.lime{background-color: lime;}
+.green{background-color: green;}
+.aqua{background-color: aqua;}
+.ocean{background-color: ocean;}
+.orchid{background-color: orchid;}
+.citrus{background-color: #ECED96;}
+.cerulean{background-color: cerulean;}
+.blue{background-color: blue;}
+.pink{background-color: #F07AB4}
+.garnet{background-color: #833741;}
+.juice{background-color: #E364AE;}
+.charcoal{background-color: #A9A9A9;}
+.multi{background-image: url();}
+.neon{background-color: #44207e;}
+.espresso{background-color: #79706e;}
+.pistachio{background-color:pistachio ;}
+.blossom{background-color: #d79a98;}
+.limeade{background-color: #1480a5;}
+.chai{background-color: chai;}
+.bone{background-color: #cec9b2;}
+.poppy{background-color: #d86b92;}
 .grey{background-color: grey;}
+.lemon{background-color: #e1c40e;}
+.chai{background-color: chai;}
+.chai{background-color: chai;}
+.chai{background-color: chai;}
+
+
+
+
+
 
 .selected{
     border: 3px solid green;
@@ -37,6 +68,8 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
+    
 }
 
 .croc-item{
@@ -44,6 +77,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border: 0px solid #000;
+    box-shadow: 2px 2px 2px 2px grey;
 }
 
 .croc-img{

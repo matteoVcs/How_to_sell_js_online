@@ -23,7 +23,6 @@ function LoadCrocs() {
 }
 
 //récupération des crocs
-var img_nbr = "img_1";
 function getCrocs() {
     
     container.innerHTML = "";
@@ -33,38 +32,38 @@ function getCrocs() {
         crocctn.classList.add("croc-item");
         if (croc.colors.length == 3) {
             crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[0]}" />
-        <div class="nom-croc"> ${croc.name} </div>
-        <div> ${croc.price}€ </div>
-        <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-        <a href="details.html" target="blank" class="crocsDetails">détails</a>
-        <div class ="color-picker-ctn">
-        <div class=" picker round ${croc.colors[0]}" onclick="Switch(0,this, ${croc.id})"></div>
-        <div class=" picker round ${croc.colors[1]}" onclick="Switch(1,this, ${croc.id})"></div>
-        <div class=" picker round ${croc.colors[2]}" onclick="Switch(2,this, ${croc.id})"></div>
-        </div>
+            <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})" />
+            <div class="nom-croc"> ${croc.name} </div>
+            <div> ${croc.price}€ </div>
+            <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
+            <a href="details.html" target="blank" class="crocsDetails">détails</a>
+            <div class ="color-picker-ctn">
+                <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
+                <div class=" picker round ${croc.colors[1]}" onclick="Switch(1, ${croc.id})" ></div>
+                <div class=" picker round ${croc.colors[2]}" onclick="Switch(2, ${croc.id})" ></div>
+            </div>
         `;
         }else if (croc.colors.length == 2) {
             crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[0]}" />
-        <div class="nom-croc"> ${croc.name} </div>
-        <div> ${croc.price}€ </div>
-        <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-        <a href="details.html" target="blank" class="crocsDetails">détails</a>
-        <div class ="color-picker-ctn">
-            <div class=" picker round ${croc.colors[0]}" onclick="Switch(0,this, ${croc.id})"></div>
-            <div class=" picker round ${croc.colors[1]}" onclick="Switch(1,this, ${croc.id})"></div>
-        </div>
+            <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})"/>
+            <div class="nom-croc"> ${croc.name} </div>
+            <div> ${croc.price}€ </div>
+            <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
+            <a href="details.html" target="blank" class="crocsDetails">détails</a>
+            <div class ="color-picker-ctn">
+                <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
+                <div class=" picker round ${croc.colors[1]}" onclick="Switch(1, ${croc.id})" ></div>
+            </div>
         `;
         }else if (croc.colors.length == 1) {
             crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[0]}" />
+        <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})"/>
         <div class="nom-croc"> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
         <a href="details.html" target="blank" class="crocsDetails">détails</a>
         <div class ="color-picker-ctn">
-            <div class=" picker round ${croc.colors[0]}" onclick="Switch(0,this, ${croc.id})"></div>
+            <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
         </div>
         `;
         }
@@ -78,16 +77,26 @@ function getCrocs() {
         container.appendChild(crocctn);
     });
 }
-var tmp = img_nbr;
-function Switch(i, element, id) {
-    
+
+function Switch(i, id) {
+    img = document.getElementsByClassName("croc-img")
     id -=1;
-    img_nbr = "img_" + (i + 1);
+    crocs[id].imgID = "img_" + (i + 1);
+    console.log(crocs[id].imgID);
     if (crocs[id].colors.length >= i+1) {
-        element.src = crocs[id][img_nbr][0];
-        console.log(element.src)
+        img[id].src = crocs[id][crocs[id].imgID][0];
     }
-} 
+}
+
+function Hover(id) {
+    img = document.getElementsByClassName("croc-img")
+    img[id-1].src = crocs[id-1][crocs[id-1].imgID][1];
+}
+
+function LeaveHover(id) {
+    img = document.getElementsByClassName("croc-img")
+    img[id-1].src = crocs[id-1][crocs[id-1].imgID][0];
+}
 
 //Filtrage
 

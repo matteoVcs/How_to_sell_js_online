@@ -2,6 +2,7 @@
     "crocs": [
         {
             "id": 1,
+            "imgID": "img_1",
             "name": "Classic Clog",
             "category": ["promo","femme", "homme"],
             "price": 39.99,
@@ -19,6 +20,7 @@
         },
         {
             "id": 2,
+            "imgID": "img_1",
             "name": "Crush Clog",
             "category": ["promo", "femme"],
             "price": 69.99,
@@ -32,6 +34,7 @@
         },
         {
             "id": 3,
+            "imgID": "img_1",
             "name": "Classic Cozzy Sandal",
             "category": ["promo"],
             "price": 59.99,
@@ -45,6 +48,7 @@
         },
         {
             "id": 4,
+            "imgID": "img_1",
             "name": "Classic Crocs Sandal",
             "category": ["promo"],
             "price": 34.99,
@@ -58,6 +62,7 @@
         },
         {
             "id": 5,
+            "imgID": "img_1",
             "name": "Women's Classic Platform Clog",
             "category": ["promo"],
             "price": 59.99,
@@ -71,6 +76,7 @@
         },
         {
             "id": 6,
+            "imgID": "img_1",
             "name": "Kid's Classic Lined Spray Dye Neo Puff Boot",
             "category": ["promo", "enfant"],
             "price": 64.99,
@@ -83,6 +89,7 @@
         },
         {
             "id": 7,
+            "imgID": "img_1",
             "name": "Kid's Baya Lined Clog",
             "category": ["promo", "enfant"],
             "price": 49.99,
@@ -96,6 +103,7 @@
         },
         {
             "id": 8,
+            "imgID": "img_1",
             "name": "Kid's Baya Printed Lined Clog",
             "category": ["promo", "enfant"],
             "price": 49.99,
@@ -108,6 +116,7 @@
         },
         {
             "id": 9,
+            "imgID": "img_1",
             "name": "Toddler_Classic Denim Clog",
             "category": ["promo", "enfant"],
             "price": 39.99,
@@ -119,6 +128,7 @@
         },
         {
             "id": 10,
+            "imgID": "img_1",
             "name": "Classic Bandana Clog",
             "category": ["promo"],
             "price": 54.99,
@@ -130,6 +140,7 @@
         },
         {
             "id": 11,
+            "imgID": "img_1",
             "name": "Classic Lined Clog",
             "category": ["femme", "homme"],
             "price": 59.99,
@@ -143,6 +154,7 @@
         },
         {
             "id": 12,
+            "imgID": "img_1",
             "name": "Classic Platform Lined Clog W",
             "category": ["femme"],
             "price": 69.99,
@@ -154,6 +166,7 @@
         },
         {
             "id": 13,
+            "imgID": "img_1",
             "name": "Mega Crush Clog",
             "category": ["femme"],
             "price": 79.99,
@@ -166,6 +179,7 @@
         },
         {
             "id": 14,
+            "imgID": "img_1",
             "name": "Mega Crush Sandal",
             "category": ["femme"],
             "price": 69.99,
@@ -179,6 +193,7 @@
         },
         {
             "id": 15,
+            "imgID": "img_1",
             "name": "Echo Clog",
             "category": ["femme", "homme"],
             "price": 69.99,
@@ -192,6 +207,7 @@
         },
         {
             "id": 16,
+            "imgID": "img_1",
             "name": "Bayaband Clog",
             "category": ["femme", "homme"],
             "price": 54.99,
@@ -205,6 +221,7 @@
         },
         {
             "id": 17,
+            "imgID": "img_1",
             "name": "Baya Clog",
             "category": ["femme", "homme"],
             "price": 49.99,
@@ -218,6 +235,7 @@
         },
         {
             "id": 18,
+            "imgID": "img_1",
             "name": "Baya Platform Clog",
             "category": ["femme"],
             "price": 59.99,
@@ -231,6 +249,7 @@
         },
         {
             "id": 19,
+            "imgID": "img_1",
             "name": "Classic Crocs Tie-Dye Graphic Sandal",
             "category": ["homme"],
             "price": 39.99,
@@ -244,6 +263,7 @@
         },
         {
             "id": 20,
+            "imgID": "img_1",
             "name": "All-Terrain Marbled Sandal",
             "category": ["homme"],
             "price": 49.99,
@@ -256,6 +276,7 @@
         },
         {
             "id": 21,
+            "imgID": "img_1",
             "name": "Realtree Edge™ Echo Clog",
             "category": ["homme"],
             "price": 74.99,
@@ -268,6 +289,7 @@
         },
         {
             "id": 22,
+            "imgID": "img_1",
             "name": "Men's Classic Yukon Vista II Clog",
             "category": ["homme"],
             "price": 59.99,
@@ -280,6 +302,7 @@
         },
         {
             "id": 23,
+            "imgID": "img_1",
             "name": "Men's LiteRide 360 Marbled Pacer",
             "category": ["homme"],
             "price": 69.99,
@@ -291,6 +314,7 @@
         },
         {
             "id": 24,
+            "imgID": "img_1",
             "name": "Kid's Crocband™ II.5 Gust Boot",
             "category": ["enfant"],
             "price": 59.99,
@@ -303,6 +327,7 @@
         },
         {
             "id": 25,
+            "imgID": "img_1",
             "name": "Kid's Crocband™ Sandal",
             "category": ["enfant"],
             "price": 34.99,
@@ -316,6 +341,7 @@
         },
         {
             "id": 26,
+            "imgID": "img_1",
             "name": "Kid's Classic Slipper",
             "category": ["enfant"],
             "price": 24.99,
@@ -329,6 +355,7 @@
         {
 
             "id": 27,
+            "imgID": "img_1",
             "name": "Kid's Classic Clog",
             "category": ["enfant"],
             "price": 39.99,
@@ -342,6 +369,7 @@
         },
         {
             "id": 28,
+            "imgID": "img_1",
             "name": "Toddler Classic Clog",
             "category": ["enfant"],
             "price": 34.99,
@@ -355,6 +383,7 @@
         },
         {
             "id": 29,
+            "imgID": "img_1",
             "name": "Kid's Handle It Rain Boot",
             "category": ["enfant"],
             "price": 34.99,

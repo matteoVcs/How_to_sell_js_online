@@ -89,7 +89,7 @@ body{
     margin-left: 40px;
     height: 35px;
     width:35px;
-    background-image: url("img/panier.png");
+    background-image: url("/style/img/panier.png");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -135,4 +135,23 @@ body{
     align-items: center;
     padding-right: 30px;
     padding-left: 30px;
+}
+
+#deco_petite{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.petite_image{
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+}
+
+.petite_image:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }

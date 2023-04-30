@@ -24,55 +24,29 @@ function LoadCrocs() {
 
 //récupération des crocs
 function getCrocs() {
-    
     container.innerHTML = "";
-    console.log(filteredCrocs);
     filteredCrocs.forEach(croc => {
+        let tmp = "";
+        let price = "";
+        for(let i = 0;i != croc.colors.length; i++) {
+            tmp += "<div class=\" picker round "+croc.colors[i]+"\" onclick=\"Switch("+i+","+ croc.id+")\"></div>\n";
+        }
+        if (croc.reduction != 0) {
+            let reduc = croc.price-(croc.reduction*croc.price)/100;
+            price = "<p class=\"oldPrice\">"+croc.price+"€</p><p>&nbsp "+reduc.toFixed(2)+"€</p><p class=reduc>&nbsp-"+croc.reduction+"%</p>";
+        } else {
+            price = croc.price + "€";
+        }
         let crocctn = document.createElement("div");
         crocctn.classList.add("croc-item");
-        if (croc.colors.length == 3) {
-            crocctn.innerHTML = `
-            <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})" />
-            <div class="nom-croc"> ${croc.name} </div>
-            <div> ${croc.price}€ </div>
-            <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-            <a href="details.html" target="blank" class="crocsDetails">détails</a>
-            <div class ="color-picker-ctn">
-                <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
-                <div class=" picker round ${croc.colors[1]}" onclick="Switch(1, ${croc.id})" ></div>
-                <div class=" picker round ${croc.colors[2]}" onclick="Switch(2, ${croc.id})" ></div>
-            </div>
-        `;
-        }else if (croc.colors.length == 2) {
-            crocctn.innerHTML = `
-            <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})"/>
-            <div class="nom-croc"> ${croc.name} </div>
-            <div> ${croc.price}€ </div>
-            <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-            <a href="details.html" target="blank" class="crocsDetails">détails</a>
-            <div class ="color-picker-ctn">
-                <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
-                <div class=" picker round ${croc.colors[1]}" onclick="Switch(1, ${croc.id})" ></div>
-            </div>
-        `;
-        }else if (croc.colors.length == 1) {
-            crocctn.innerHTML = `
-        <img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})"/>
+        crocctn.innerHTML += `<img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})" />
         <div class="nom-croc"> ${croc.name} </div>
-        <div> ${croc.price}€ </div>
+        <div class="crocPrice"> ${price} </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
         <a href="details.html" target="blank" class="crocsDetails">détails</a>
         <div class ="color-picker-ctn">
-            <div class=" picker round ${croc.colors[0]}" onclick="Switch(0, ${croc.id})" ></div>
-        </div>
-        `;
-        }
-        /*crocctn.onmouseover = function() {
-            document.getElementsByClassName("croc-img")[croc.id-1].src = croc[img_nbr][1];
-        }
-        crocctn.onmouseleave = function() {
-            document.getElementsByClassName("croc-img")[croc.id-1].src = croc[img_nbr][0];
-        }*/
+            ${tmp}
+        </div>`;
         
         container.appendChild(crocctn);
     });
@@ -82,7 +56,6 @@ function Switch(i, id) {
     img = document.getElementsByClassName("croc-img")
     id -=1;
     crocs[id].imgID = "img_" + (i + 1);
-    console.log(crocs[id].imgID);
     if (crocs[id].colors.length >= i+1) {
         img[id].src = crocs[id][crocs[id].imgID][0];
     }
@@ -180,11 +153,11 @@ function addcrocs(id) {
 
 function loadcart() {
     cartCtn.innerHTML = "";
-    cartList.forEach(croc => {
+    cartList.forEach(function(croc, x) {
         let crocCart = document.createElement("div");
         crocCart.classList.add("cart-item");
         crocCart.innerHTML = `
-        <img class="cart-croc-img" src="${croc.img_1[0]}" />
+        <img class="cart-croc-img" src="${croc[croc.imgID][0]}" />
         <div> ${croc.name} </div>
         <div> ${croc.price}€ </div>
         <button onclick="removefromcard(${croc.id})"> Supprimer </button>
@@ -199,7 +172,6 @@ function removefromcard(id) {
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
-
 //lancement de la fonction
 
 LoadCrocs();

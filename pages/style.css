@@ -91,12 +91,30 @@ background-size: contain;}
     width: 300px
 }
 
+.reduc {
+    color: red;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}
+
+.crocPrice {
+    display: flex;
+    flex-direction: row;
+}
+
 .cart-icon{
+    margin-left: 40px;
+    height: 35px;
+    width:35px;
+    background-image: url("/style/img/panier.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
-    width: 50px;
-    height: 50px;
-    right: 10px;
-    top: 10px;
+    left: 93%;
     z-index: 10;
 }
 .cart-ctn{

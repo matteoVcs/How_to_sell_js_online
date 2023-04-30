@@ -146,7 +146,11 @@ let cartList = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addcrocs(id) {
     let croc = crocs.find(croc => croc.id === id);
-    cartList.push(croc);
+    if (JSON.stringify(cartList).includes(JSON.stringify(croc))) {
+        console.log("doublon")
+    } else {
+        cartList.push(croc);
+    }
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }

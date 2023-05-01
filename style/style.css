@@ -29,7 +29,9 @@ body{
     overflow: hidden;
 }
 
-
+a{
+    text-decoration: none;
+}
     
 
 
@@ -43,17 +45,8 @@ body{
     font-weight: bold;
 
 }
-@media screen and (max-width: 946px) {
-    #Menu_Crocs{
-        height: 50px;
 
-    }
-}
-@media screen and (max-width: 946px) {
-    .titre{
-        display: none;
-    }
-}
+
 
 #promo{
     display: flex;
@@ -71,11 +64,22 @@ body{
     align-items: center;
     padding-right: 30px;
     padding-left: 30px;
+    color: black;
 }
 
-.name:hover{
-    color: rgb(38, 80, 98);
-    transition : 0.4s;
+.titre:hover{
+    color: #006da4;
+    transition : 0.1s;
+}
+
+@media screen and (max-width: 946px) {
+    #Menu_Crocs{
+        height: 50px;
+
+    }
+    .titre{
+        display: none;
+    }
 }
 #logo{
     margin-left: 40px;
@@ -119,6 +123,7 @@ body{
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 5%;
 }
 
 #second_bar{
@@ -129,7 +134,6 @@ body{
     background-color: #ffffff;
     height: 82px;
     width: 100%;
-    color : #444444;
     font-weight: bold;
     border-bottom: 2px solid #e4e1e5;
     border-top: 2px solid #e4e1e5;
@@ -142,9 +146,16 @@ body{
     align-items: center;
     padding-right: 30px;
     padding-left: 30px;
+    color : #444444;
 }
 
-#deco_petite{
+.second_titre:hover{
+    color: black;
+    text-decoration: underline;
+    transition : 0.4s;
+}
+
+.deco_petite{
     display: flex;
     flex-direction: row;
     justify-content: center;

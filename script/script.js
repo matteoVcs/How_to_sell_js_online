@@ -43,7 +43,7 @@ function getCrocs() {
         <div class="nom-croc"> ${croc.name} </div>
         <div class="crocPrice"> ${price} </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-        <a href="details.html" target="blank" class="crocsDetails">détails</a>
+        <a href="details.html" target="blank class="crocsDetails" onclick="Details(${croc.id})">détails</a>
         <div class ="color-picker-ctn">
             ${tmp}
         </div>`;
@@ -51,6 +51,24 @@ function getCrocs() {
         container.appendChild(crocctn);
     });
 }
+
+
+var details = JSON.parse(localStorage.getItem("details")) || [];
+function Details(id) {
+    let tmp = "";
+    let croc = crocs.find(croc => croc.id === id);
+    details = croc;
+    localStorage.setItem("details", JSON.stringify(details));
+    
+}
+
+
+var crocDetails = localStorage.getItem("details") || []
+function mabite() {
+    console.log(crocDetails)
+}
+
+
 
 function Switch(i, id) {
     img = document.getElementsByClassName("croc-img")
@@ -143,14 +161,12 @@ function toggleCart() {
 //localStorage
 
 let cartList = JSON.parse(localStorage.getItem("cart")) || [];
-
 function addcrocs(id) {
     let croc = crocs.find(croc => croc.id === id);
-    if (JSON.stringify(cartList).includes(JSON.stringify(croc))) {
-        console.log("doublon")
-    } else {
-        cartList.push(croc);
-    }
+    var simplifiedImg = (croc[croc.imgID][0].slice(0, croc[croc.imgID][0].length-6).split('/').pop()).toString();
+    var simplifiedName = croc.name.replace(/\ /g, "_");
+    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcart("+croc.id+")\"> Supprimer </button>";
+    cartList.push(tmp);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
@@ -160,22 +176,40 @@ function loadcart() {
     cartList.forEach(function(croc, x) {
         let crocCart = document.createElement("div");
         crocCart.classList.add("cart-item");
-        crocCart.innerHTML = `
-        <img class="cart-croc-img" src="${croc[croc.imgID][0]}" />
-        <div> ${croc.name} </div>
-        <div> ${croc.price}€ </div>
-        <button onclick="removefromcard(${croc.id})"> Supprimer </button>
-        `;
+        crocCart.innerHTML = cartList[x];
         cartCtn.appendChild(crocCart);
     });
 }
 
-function removefromcard(id) {
-    let indexToRemove = cartList.findIndex(croc => croc.id === id);
-    cartList.splice(indexToRemove, 1);
+function removefromcart(id) {
+    let toRemove = 0;
+    
+    for (var i = 0; i != cartList.length-1; i++) {
+        if (cartList[i].includes("removefromcart("+id+")" )) {
+            console.log("exterminate")
+            toRemove = i;
+        }
+    }
+    cartList.splice(toRemove, 1);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
+
+/*function refreshCart() {
+    console.log(cartList)
+    let croc = crocs.find(croc => croc.id === id);
+    let tmp = "";
+    nbItemInCart = 0;
+    for (let i = 0; i != cartList.length-1; i++) {
+        tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcard("+nbItemInCart+")\"> Supprimer </button>";
+        cartList.push(tmp);
+        nbItemInCart++;
+    }
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    console.log(cartList)
+    loadcart();
+}*/
+
 //lancement de la fonction
 
 LoadCrocs();

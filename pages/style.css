@@ -128,13 +128,7 @@ background-size: contain;}
     z-index: 9;
     padding-top: 80px;
 }
-@media screen and (max-width: 1120px){
-    .cart-icon{
-        display: none;
-    }
 
-    
-}
 .open-cart{
     right: 0;
 }

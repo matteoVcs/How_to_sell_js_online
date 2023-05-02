@@ -139,6 +139,7 @@ a{
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5%;
+    margin-top: 150px;
 }
 
 #second_bar{
@@ -450,8 +451,4 @@ a{
 
 .sous_exclu:hover{
     text-decoration: underline;
-}
-
-#societe{
-    
 }

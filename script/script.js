@@ -28,7 +28,7 @@ function getCrocs() {
         let tmp = "";
         let price = "";
         for(let i = 0;i != croc.colors.length; i++) {
-            tmp += "<div class=\" picker round "+croc.colors[i]+"\" onclick=\"Switch("+i+","+ croc.id+")\"></div>\n";
+            tmp += "<div class=\" picker round "+croc.colors[i]+"\" onclick=\"Switch("+i+","+ x+")\"></div>\n";
         }
         if (croc.reduction != 0) {
             let reduc = croc.price-(croc.reduction*croc.price)/100;
@@ -71,7 +71,7 @@ function test2() {
 
 function Switch(i, id) {
     img = document.getElementsByClassName("croc-img")
-    id -=1;
+    
     crocs[id].imgID = "img_" + (i + 1);
     if (crocs[id].colors.length >= i+1) {
         img[id].src = crocs[id][crocs[id].imgID][0];

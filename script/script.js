@@ -64,7 +64,7 @@ function Details(id) {
 
 
 var crocDetails = localStorage.getItem("details") || []
-function mabite() {
+function test2() {
     console.log(crocDetails)
 }
 
@@ -163,9 +163,15 @@ function toggleCart() {
 let cartList = JSON.parse(localStorage.getItem("cart")) || [];
 function addcrocs(id) {
     let croc = crocs.find(croc => croc.id === id);
-    var simplifiedImg = (croc[croc.imgID][0].slice(0, croc[croc.imgID][0].length-6).split('/').pop()).toString();
-    var simplifiedName = croc.name.replace(/\ /g, "_");
-    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcart("+croc.id+")\"> Supprimer </button>";
+    let imgValue = 0;
+    if (croc.imgID == "img_1") {
+        imgValue = 0;
+    } else if (croc.imgID == "img_2") {
+        imgValue = 1;
+    }else if (croc.imgID == "img_3") {
+        imgValue = 2;
+    }
+    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcart("+croc.id+", "+imgValue+")\"> Supprimer </button>";
     cartList.push(tmp);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
@@ -181,12 +187,24 @@ function loadcart() {
     });
 }
 
-function removefromcart(id) {
+function removefromcart(id, value) {
     let toRemove = 0;
-    
-    for (var i = 0; i != cartList.length-1; i++) {
-        if (cartList[i].includes("removefromcart("+id+")" )) {
-            console.log("exterminate")
+    let croc = crocs[id-1]
+    let crocHtml = document.getElementsByClassName("cart-croc-img")
+    let IDimg = ""
+    if (value == 0) {
+        IDimg = "img_1";
+    } else if (value == 1) {
+        IDimg = "img_2";
+    } else if (value == 2) {
+        IDimg = "img_3";
+    }
+    let simplifiedImg = ""
+    let simplifiedSrc = ""
+    for (var i = 0; i != cartList.length; i++) {
+        simplifiedImg = croc[IDimg][0].slice(0, croc[IDimg][0].length-5).split('/').pop().toString();
+        simplifiedSrc = crocHtml[i].src.slice(0, crocHtml[i].src.length-5).split('/').pop().toString();
+        if (simplifiedSrc == simplifiedImg) {
             toRemove = i;
         }
     }

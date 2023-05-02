@@ -29,6 +29,13 @@ body{
     overflow: hidden;
 }
 
+#fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
 a{
     text-decoration: none;
 }
@@ -43,6 +50,8 @@ a{
     flex-direction: row;
     align-items: center;
     font-weight: bold;
+    background-color: #ffffff;
+
 
 }
 
@@ -65,6 +74,8 @@ a{
     padding-right: 30px;
     padding-left: 30px;
     color: black;
+    cursor: pointer;
+    user-select: none;
 }
 
 .titre:hover{
@@ -147,6 +158,8 @@ a{
     padding-right: 30px;
     padding-left: 30px;
     color : #444444;
+    cursor: pointer;
+    user-select: none;
 }
 
 .second_titre:hover{
@@ -168,6 +181,8 @@ a{
     height: 182px;
     width: 182px;
     border-radius: 5%;
+    cursor: pointer;
+    user-select: none;
 }
 @media screen and (max-width: 1148px) {
     .petite_image{
@@ -198,9 +213,6 @@ a{
     height: 470px;
 
 }
-#grande_image:hover{
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-}
 
 
 @media screen and (max-width: 762px){
@@ -208,4 +220,232 @@ a{
         background-image: url("/style/img/grande_deco_bis.webp");
     }
 }
-    
+
+#haut_footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 122px;
+    width: 100%;
+}
+#bouton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 71px;
+    width: 270px;
+    background-color: white;
+    color: black;
+    border: 3.5px solid white;
+}
+
+#bouton:hover{
+    background-color: black;
+    color: white;
+    transition : 0.4s;
+    cursor: pointer;
+    user-select: none;
+}
+
+#bar_contact{
+    height: 52px;
+    background-color: black;
+    border-top : 2px solid white;
+    border-bottom : 2px solid white;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#profil{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color : white;
+    cursor: pointer;
+    user-select: none;
+}
+#profil:hover{
+    text-decoration: underline;
+}
+#profil_img{
+    height: 18px;
+    width: 18px;
+}
+
+#location{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color : white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#location:hover{
+    text-decoration: underline;
+}
+
+#location_img{
+    height: 18px;
+    width: 13px;
+}
+#france{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color : white;
+    cursor: pointer;
+    user-select: none;
+}
+#france_img{
+    height: 13px;
+    width: 18px;
+}
+#france:hover{
+    text-decoration: underline;
+}
+
+#logos_reseaux{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#insta{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#insta_img{
+    height:24px;
+    width: 24px;
+}
+
+#insta_img:hover{
+    height: 28px;
+    width: 28px;
+    transition : 0.4s;}
+
+#youtube{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#youtube_img{
+    height:16px;
+    width:24px;
+}
+
+#youtube_img:hover{
+    height: 20px;
+    width: 28px;
+    transition : 0.4s;
+}
+
+#facebook{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#facebook_img{
+    height:24px;
+    width: 24px;
+}
+
+#facebook_img:hover{
+    height: 28px;
+    width: 28px;
+    transition : 0.4s;
+}
+
+#twitter{
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#twitter_img{
+    height:24px;
+    width: 24px;
+}
+
+#twitter_img:hover{
+    height: 28px;
+    width: 28px;
+    transition : 0.4s;
+}
+
+#personne_lis_ça{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    height: 250px;
+    width: 100%;
+    background-color: black;
+    border-bottom: #ffffff 2px solid;
+    color: white;
+}
+
+#exclu{
+    display: inline;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    background-color: black;
+    border-bottom: #ffffff 2px solid;
+    color: white;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.sous_exclu{
+    padding-top: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.sous_exclu:hover{
+    text-decoration: underline;
+}

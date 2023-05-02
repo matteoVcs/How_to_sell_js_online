@@ -91,6 +91,10 @@ a{
     .titre{
         display: none;
     }
+    #like{
+        display: none;
+    }
+
 }
 #logo{
     margin-left: 40px;
@@ -432,12 +436,10 @@ a{
     flex-direction: column;
     align-items: center;
     height: 250px;
-    width: 100%;
     background-color: black;
     border-bottom: #ffffff 2px solid;
     color: white;
-    padding-left: 50px;
-    padding-top: 50px;
+
 }
 
 .sous_exclu{
@@ -448,4 +450,8 @@ a{
 
 .sous_exclu:hover{
     text-decoration: underline;
+}
+
+#societe{
+    
 }

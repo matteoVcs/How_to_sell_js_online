@@ -120,6 +120,12 @@ background-size: contain;}
     user-select: none;
 
 }
+
+@media screen and (max-width: 946px) {
+    .cart-icon{
+        display: none;
+    }
+}
 .cart-ctn{
     background: #f5f5f5;
     position: absolute;

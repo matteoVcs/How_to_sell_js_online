@@ -14,7 +14,6 @@ function LoadCrocs() {
         .then(data => {
             crocs = data.crocs;
             filteredCrocs = crocs;
-            console.log(crocs, filteredCrocs);
             getCrocs();
             loadcart();
             
@@ -25,7 +24,7 @@ function LoadCrocs() {
 //récupération des crocs
 function getCrocs() {
     container.innerHTML = "";
-    filteredCrocs.forEach(croc => {
+    filteredCrocs.forEach(function(croc, x)  {
         let tmp = "";
         let price = "";
         for(let i = 0;i != croc.colors.length; i++) {
@@ -39,7 +38,7 @@ function getCrocs() {
         }
         let crocctn = document.createElement("div");
         crocctn.classList.add("croc-item");
-        crocctn.innerHTML += `<img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${croc.id})" onmouseleave="LeaveHover(${croc.id})" />
+        crocctn.innerHTML += `<img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${x})" onmouseleave="LeaveHover(${x})" />
         <div class="nom-croc"> ${croc.name} </div>
         <div class="crocPrice"> ${price} </div>
         <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
@@ -79,14 +78,14 @@ function Switch(i, id) {
     }
 }
 
-function Hover(id) {
+function Hover(i) {
     img = document.getElementsByClassName("croc-img")
-    img[id-1].src = crocs[id-1][crocs[id-1].imgID][1];
+    img[i].src = crocs[i][crocs[i].imgID][1];
 }
 
-function LeaveHover(id) {
+function LeaveHover(i) {
     img = document.getElementsByClassName("croc-img")
-    img[id-1].src = crocs[id-1][crocs[id-1].imgID][0];
+    img[i].src = crocs[i][crocs[i].imgID][0];
 }
 
 //Filtrage
@@ -113,17 +112,14 @@ function SelectItem(e) {
 function FilterByColor(color) {
     if (color === "all") {
         filteredCrocs = crocs;
-        getCrocs();
     } else {
         filteredCrocs = crocs.filter((croc) => croc.colors[0] === color || croc.colors[1] === color || croc.colors[2] === color);
         if (filteredCrocs.length <= 0) {
             container.innerHTML = "Aucun résultat";
-        } else {
-            getCrocs();
         }
     }
     
-    getCrocs();
+    
     
 }
 

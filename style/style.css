@@ -20,13 +20,48 @@ body{
 #bandeau{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     background-color: #181a1b;
-    height: 30px;
+    height: 48px;
     width: 100%;
     color : white;
     overflow: hidden;
+}
+#livraison{
+    padding-right:auto;
+}
+
+#inscription{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 450px;
+    border-right: #ffffff 3px solid;
+    padding-right: 80px;
+    padding-left: 80px;
+    height: 48px;
+}
+
+#inscription:hover{
+    background-color: #ffffff;
+    color: black;
+    transition : 0.1s;
+}
+
+#compte{
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+#compte:hover{
+    background-color: #ffffff;
+    color: black;
+    transition : 0.1s;
 }
 
 #fixed{
@@ -112,6 +147,16 @@ a{
         display: none;
     }
     .titre_promo{
+        display: none;
+    }
+    #bandeau{
+        height: 40px;
+        justify-content: center;
+    }
+    #inscription{
+        display: none;
+    }
+    #compte{
         display: none;
     }
 

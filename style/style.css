@@ -25,10 +25,19 @@ body{
     height: 48px;
     width: 100%;
     color : white;
-    overflow: hidden;
+    overflow-wrap: break-word;
+    overflow: hidden    ;
+    
+    
 }
 #livraison{
     padding-right:auto;
+    padding-left: 70px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: underline;
+    font-size: 14px;
+    
 }
 
 #inscription{
@@ -36,11 +45,14 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-left: 450px;
+    margin-left: 430px;
     border-right: #ffffff 3px solid;
     padding-right: 80px;
     padding-left: 80px;
     height: 48px;
+    cursor: pointer;
+    user-select: none;
+    
 }
 
 #inscription:hover{
@@ -57,6 +69,8 @@ body{
     height: 48px;
     padding-right: 50px;
     padding-left: 50px;
+    cursor: pointer;
+    user-select: none;
 }
 #compte:hover{
     background-color: #ffffff;
@@ -159,10 +173,16 @@ a{
     #compte{
         display: none;
     }
+    
 
 }
+
+@media screen and (min-width: 946px) {
+    #menu_img{
+        display: none;
+    }
+}
 #logo{
-    margin-left: 40px;
     height: 35px;
     width:160px;
     background-image: url("img/logo.png");
@@ -170,6 +190,25 @@ a{
     background-size: contain;
 }
 
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    font-weight: bold;
+}
+
+#menu_img{
+    height: 25px;
+    width: 25px;
+    background-image: url("img/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    user-select: none;
+}
 
 
 

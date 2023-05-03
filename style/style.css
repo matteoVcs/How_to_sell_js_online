@@ -30,6 +30,13 @@ body{
     
     
 }
+
+#tmp{
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+}
+
 #livraison{
     padding-right:auto;
     padding-left: 70px;
@@ -392,6 +399,7 @@ a{
 #profil_img{
     height: 18px;
     width: 18px;
+    margin-right: 10px;
 }
 
 #location{
@@ -412,6 +420,7 @@ a{
 #location_img{
     height: 18px;
     width: 13px;
+    margin-right: 10px;
 }
 #france{
     display: flex;
@@ -426,6 +435,7 @@ a{
 #france_img{
     height: 13px;
     width: 18px;
+    margin-right: 10px;
 }
 #france:hover{
     text-decoration: underline;

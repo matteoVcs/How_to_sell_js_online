@@ -138,7 +138,8 @@ function sortByPriceAsc() {
     getCrocs();
 }
 
-//toggle cart
+//toggle 
+
 
 const cartIcon = document.querySelector(".cart-icon");
 const cartCtn = document.querySelector(".cart-ctn");

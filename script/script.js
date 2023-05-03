@@ -140,7 +140,6 @@ function sortByPriceAsc() {
 
 //toggle 
 
-
 const cartIcon = document.querySelector(".cart-icon");
 const cartCtn = document.querySelector(".cart-ctn");
 
@@ -149,9 +148,9 @@ cartIcon.addEventListener("click", toggleCart);
 function toggleCart() {
     cartCtn.classList.toggle("open-cart");
     if(cartCtn.classList.contains("open-cart")) {
-        cartIcon.src = "crocs/logo/close.png";
+        cartIcon.style.backgroundImage = "url('/style/img/close.png')";
     } else {
-        cartIcon.src = "crocs/logo/cart.png";
+        cartIcon.style.backgroundImage = "url('/style/img/panier.png')";
     }
 }
 

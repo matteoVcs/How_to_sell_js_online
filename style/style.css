@@ -78,6 +78,23 @@ a{
     user-select: none;
 }
 
+.titre_promo{
+    display: flex;
+    flex-direction: row;
+    height: 72px;
+    align-items: center;
+    padding-right: 30px;
+    padding-left: 30px;
+    color: red;
+    cursor: pointer;
+    user-select: none;
+}
+
+.titre_promo:hover{
+    color: #006da4;
+    transition : 0.1s;
+}
+
 .titre:hover{
     color: #006da4;
     transition : 0.1s;
@@ -92,6 +109,9 @@ a{
         display: none;
     }
     #like{
+        display: none;
+    }
+    .titre_promo{
         display: none;
     }
 

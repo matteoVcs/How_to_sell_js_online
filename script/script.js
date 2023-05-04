@@ -6,6 +6,18 @@ let filteredCrocs;
 
 //chargement des crocs
 
+function getFilteredCrocs(crocs) {
+    let Window = window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString()
+    let ret = [];
+    for (let i = 0; i != crocs.length; i++) {
+        if (crocs[i].category.includes(Window)) {
+            ret.push(crocs[i])
+        }
+    }
+    return ret
+}
+
+
 function LoadCrocs() {
     fetch(`${url}/crocs`)
         .then(response => {
@@ -13,7 +25,8 @@ function LoadCrocs() {
         })
         .then(data => {
             crocs = data.crocs;
-            filteredCrocs = crocs;
+            filteredCrocs = getFilteredCrocs(crocs);
+            
             getCrocs();
             loadcart();
             
@@ -208,21 +221,6 @@ function removefromcart(id, value) {
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
-
-/*function refreshCart() {
-    console.log(cartList)
-    let croc = crocs.find(croc => croc.id === id);
-    let tmp = "";
-    nbItemInCart = 0;
-    for (let i = 0; i != cartList.length-1; i++) {
-        tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcard("+nbItemInCart+")\"> Supprimer </button>";
-        cartList.push(tmp);
-        nbItemInCart++;
-    }
-    localStorage.setItem("cart", JSON.stringify(cartList));
-    console.log(cartList)
-    loadcart();
-}*/
 
 //lancement de la fonction
 

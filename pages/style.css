@@ -75,6 +75,7 @@ background-size: contain;}
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    padding-top: 150px;
     
 }
 
@@ -110,7 +111,7 @@ background-size: contain;}
     margin-left: 40px;
     height: 35px;
     width:35px;
-    background-image: url("/style/img/panier.png");
+    background-image: url("../style/img/panier.png");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -128,7 +129,7 @@ background-size: contain;}
 }
 .cart-ctn{
     background: #f5f5f5;
-    position: absolute;
+    position: fixed;
     top: 144px ;
     right: -500px;
     width: 500px;

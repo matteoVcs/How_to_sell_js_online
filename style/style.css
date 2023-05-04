@@ -107,6 +107,7 @@ a{
     align-items: center;
     font-weight: bold;
     background-color: #ffffff;
+    position: fixed;
 
 
 }
@@ -324,7 +325,7 @@ a{
 
 }
 #grande_image{
-    background-image: url("/style/img/grande_deco.jpg");
+    background-image: url("img/grande_deco.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     width: 1200px;
@@ -335,7 +336,7 @@ a{
 
 @media screen and (max-width: 762px){
     #grande_image{
-        background-image: url("/style/img/grande_deco_bis.webp");
+        background-image: url("img/grande_deco_bis.webp");
     }
 }
 

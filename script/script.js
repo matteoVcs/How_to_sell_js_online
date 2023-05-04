@@ -148,9 +148,9 @@ cartIcon.addEventListener("click", toggleCart);
 function toggleCart() {
     cartCtn.classList.toggle("open-cart");
     if(cartCtn.classList.contains("open-cart")) {
-        cartIcon.style.backgroundImage = "url('/style/img/close.png')";
+        cartIcon.style.backgroundImage = "url('../style/img/close.png')";
     } else {
-        cartIcon.style.backgroundImage = "url('/style/img/panier.png')";
+        cartIcon.style.backgroundImage = "url('../style/img/panier.png')";
     }
 }
 

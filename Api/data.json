@@ -3,7 +3,7 @@
         {
             "id": 1,
             "imgID": "img_1",
-            "name": "Classic_Clog",
+            "name": "Classic Clog",
             "category": ["promo","femme", "homme"],
             "price": 39.99,
             "colors": ["blue","black","white"],

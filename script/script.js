@@ -4,8 +4,11 @@ const pickers = document.querySelectorAll(".picker");
 let crocs;
 let filteredCrocs;
 
-//chargement des crocs
 
+//lancement de la fonction
+console.log(window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString())
+
+//chargement des crocs
 function getFilteredCrocs(crocs) {
     let Window = window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString()
     let ret = [];
@@ -29,9 +32,7 @@ function LoadCrocs() {
             
             getCrocs();
             loadcart();
-            
         })
-        .catch(error => console.log("erreur : " + error));
 }
 
 //récupération des crocs
@@ -71,16 +72,7 @@ function Details(id) {
     let croc = crocs.find(croc => croc.id === id);
     details = croc;
     localStorage.setItem("details", JSON.stringify(details));
-    
 }
-
-
-var crocDetails = localStorage.getItem("details") || []
-function test2() {
-    console.log(crocDetails)
-}
-
-
 
 function Switch(i, id) {
     img = document.getElementsByClassName("croc-img")
@@ -102,7 +94,6 @@ function LeaveHover(i) {
 }
 
 //Filtrage
-
 pickers.forEach(picker => {
     picker.addEventListener("click", SelectItem);
 });
@@ -140,7 +131,9 @@ function FilterByColor(color) {
 
 const priceBtnAsc = document.querySelector(".price-btn-asc");
 
-priceBtnAsc.addEventListener("click", sortByPriceAsc);
+if (priceBtnAsc != null) {
+    priceBtnAsc.addEventListener("click", sortByPriceAsc);
+}
 
 function compareByPriceAscending (a, b) {
     return a.price - b.price;
@@ -156,7 +149,9 @@ function sortByPriceAsc() {
 const cartIcon = document.querySelector(".cart-icon");
 const cartCtn = document.querySelector(".cart-ctn");
 
-cartIcon.addEventListener("click", toggleCart);
+if (cartIcon != null) {
+    cartIcon.addEventListener("click", toggleCart);
+}
 
 function toggleCart() {
     cartCtn.classList.toggle("open-cart");
@@ -221,7 +216,5 @@ function removefromcart(id, value) {
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
-
-//lancement de la fonction
 
 LoadCrocs();

@@ -77,20 +77,20 @@ function Details(id) {
 function Switch(i, id) {
     img = document.getElementsByClassName("croc-img")
     
-    crocs[id].imgID = "img_" + (i + 1);
-    if (crocs[id].colors.length >= i+1) {
-        img[id].src = crocs[id][crocs[id].imgID][0];
+    filteredCrocs[id].imgID = "img_" + (i + 1);
+    if (filteredCrocs[id].colors.length >= i+1) {
+        img[id].src = filteredCrocs[id][filteredCrocs[id].imgID][0];
     }
 }
 
 function Hover(i) {
     img = document.getElementsByClassName("croc-img")
-    img[i].src = crocs[i][crocs[i].imgID][1];
+    img[i].src = filteredCrocs[i][filteredCrocs[i].imgID][1];
 }
 
 function LeaveHover(i) {
     img = document.getElementsByClassName("croc-img")
-    img[i].src = crocs[i][crocs[i].imgID][0];
+    img[i].src = filteredCrocs[i][filteredCrocs[i].imgID][0];
 }
 
 //Filtrage
@@ -174,21 +174,28 @@ function addcrocs(id) {
         imgValue = 1;
     }else if (croc.imgID == "img_3") {
         imgValue = 2;
-    }
-    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div> "+croc.price+"€ </div> <button onclick=\"removefromcart("+croc.id+", "+imgValue+")\"> Supprimer </button>";
+    }                                                                                                                                                                       
+    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div class=\"crocPrice\"> "+croc.price+"€ </div> <img src=\"../style/img/trash.png\" id=\"poubelle\" onclick=\"removefromcart("+croc.id+", "+imgValue+")";
     cartList.push(tmp);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
 
 function loadcart() {
-    cartCtn.innerHTML = "";
+    let tmp = "<button class=\"test\" onclick=\"clearCart()\">test</button>"
+    cartCtn.innerHTML = tmp;
     cartList.forEach(function(croc, x) {
         let crocCart = document.createElement("div");
         crocCart.classList.add("cart-item");
-        crocCart.innerHTML = cartList[x];
+        crocCart.innerHTML =  cartList[x];
         cartCtn.appendChild(crocCart);
     });
+    let crocPrice = document.getElementsByClassName("crocPrice")
+    let totalValue = 0;
+    for (let i = 0; i != cartList.lenght; i++) {
+        totalValue += parseFloat(crocPrice[i].innerHTML)
+    }
+    cartCtn.innerHTML += "<button class=\"confirmButton\">acheter ("+totalValue+"€)</button>"
 }
 
 function removefromcart(id, value) {
@@ -213,6 +220,12 @@ function removefromcart(id, value) {
         }
     }
     cartList.splice(toRemove, 1);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+}
+
+function clearCart() {
+    cartList = []
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }

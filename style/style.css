@@ -629,7 +629,7 @@ a{
 
 }
 #body{
-    background-color: grey;
+    background-color: #e2dcdc;
 }
 
 
@@ -657,10 +657,7 @@ a{
     transition: 0.4s;
 }
 
-.size:checked{
-    background-color: #000000;
-    color: white;
-}
+
 
 .detailsTitle{
     font-size: large;
@@ -677,6 +674,8 @@ a{
     gap: 25px;
     background-color: #e2dcdc;
     height: 150px;
+    border-top: #000000 1px solid;
+    border-right: #000000 1px solid;
 
 }
 
@@ -863,6 +862,7 @@ a{
     user-select: none;
     background-color: #e2dcdc;
     padding-bottom: 15px;
+    border-bottom: 1px solid black;
 }
 
 .MiniCarousselImg {

@@ -716,7 +716,7 @@ a{
 #plus{
     max-width: 650px;
     display: flex;
-    border: #eae7e4 1px solid;
+    border: #eae7e4 2px solid;
     padding: 15px;
 }
 #rose{
@@ -844,6 +844,15 @@ a{
     user-select: none;
 }
 
+.Arrow:hover {
+    color: #006da4;
+    transition : 0.3s;
+}
+
+.Arrow:active {
+    font-size: 55px;
+}
+
 .carousselImg{
     height: 70%;
     width: 70%;
@@ -871,9 +880,13 @@ a{
     border : 1px solid black;
 }
 
-.MiniCarousselImg:hover{
+.MiniCarousselImg:active {
     border: 2px solid black;
-    transition : 0.1s;
+}
+
+.MiniCarousselImg:hover{
+    height: 55px;
+    width: 55px;
 }
 
 .allColors {

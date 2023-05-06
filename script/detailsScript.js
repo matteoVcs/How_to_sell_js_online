@@ -40,7 +40,19 @@ function loadDetails() {
         imgColorSelector.myParams = i;
         detailsColors.appendChild(imgColorSelector);
     }
+    for (let i = 0; i != newCroc.sizes.length; i++) {
+        let sizeCurr = document.createElement("div");
+        sizeCurr.classList.add("size");
+        sizeCurr.addEventListener("click", () => {
+            console.log("clicked")
+            sizeCurr.classList.toggle("selected");
+        })
+        sizeCurr.innerHTML = newCroc.sizes[i];
+        detailsSize.appendChild(sizeCurr);
+
+    }
 }
+
 
 
 function moveElem(i) {

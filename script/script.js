@@ -55,8 +55,8 @@ function getCrocs() {
         crocctn.innerHTML += `<img class="croc-img" src="${croc.img_1[0]}" onmouseover="Hover(${x})" onmouseleave="LeaveHover(${x})" />
         <div class="nom-croc"> ${croc.name} </div>
         <div class="crocPrice"> ${price} </div>
-        <button onclick="addcrocs(${croc.id})"> Ajouter au panier </button>
-        <a href="details.html" target="blank class="crocsDetails" onclick="Details(${croc.id})">détails</a>
+        <div onclick="addcrocs(${croc.id})" class="ajout"> Ajouter au panier </div>
+        <a href="details.html" class="crocsDetails"target="blank" onclick="Details(${croc.id})">détails</a>
         <div class ="color-picker-ctn">
             ${tmp}
         </div>`;
@@ -67,8 +67,8 @@ function getCrocs() {
 
 
 var details = JSON.parse(localStorage.getItem("details")) || [];
+console.log(details)
 function Details(id) {
-    let tmp = "";
     let croc = crocs.find(croc => croc.id === id);
     details = croc;
     localStorage.setItem("details", JSON.stringify(details));
@@ -174,15 +174,22 @@ function addcrocs(id) {
         imgValue = 1;
     }else if (croc.imgID == "img_3") {
         imgValue = 2;
-    }                                                                                                                                                                       
-    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div class=\"cartCrocPrice\"> "+croc.price+"€ </div> <img  id=\"poubelle\" src=\"../style/img/trash.png\" onclick=\"removefromcart("+croc.id+", "+imgValue+")>";
+    }         
+    let price = 0
+    if (croc.reduction != 0) {
+        let reduc = croc.price-(croc.reduction*croc.price)/100;
+        price = reduc.toFixed(2);
+    } else {
+        price = croc.price;
+    }       
+    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div class=\"cartCrocPrice\"> "+price+"€ </div> <img id=\"poubelle\" onclick=\"removefromcart("+croc.id+", "+imgValue+")\" src=\"../style/img/trash.png\" />";
     cartList.push(tmp);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
 
 function loadcart() {
-    let tmp = "<button class=\"test\" onclick=\"clearCart()\">test</button>"
+    let tmp = "<button class=\"vider\" onclick=\"clearCart()\">Vider Le Panier</button>"
     cartCtn.innerHTML = tmp;
     cartList.forEach(function(croc, x) {
         let crocCart = document.createElement("div");
@@ -193,18 +200,11 @@ function loadcart() {
 
     let totalValue = 0;
     let cartCrocPrice = document.getElementsByClassName("cartCrocPrice")
-    console.log (cartCrocPrice.lenght)
-    while(cartCrocPrice) {
-        totalValue += 1
-    }
-    console.log(totalValue)
-    let tmpvalue = 1
-    if (tmpvalue == 1) {
-        console.log("test")
-        for (let i = 0; i <= cartCrocPrice.lenght; i++) {
-            console.log(parseFloat(cartCrocPrice[i].innerHTML))
+    if (cartCrocPrice.length > 0) {
+        for (let i = 0; i <= cartCrocPrice.length-1; i++) {
+            totalValue += parseFloat(cartCrocPrice[i].innerHTML)
         }
-        cartCtn.innerHTML += "<button class=\"confirmButton\">acheter ("+totalValue+"€)</button>"
+        cartCtn.innerHTML += "<button class=\"confirmButton\">Acheter ("+totalValue.toFixed(2)+"€)</button>"
     }
 }
 
@@ -240,4 +240,6 @@ function clearCart() {
     loadcart();
 }
 
-LoadCrocs();
+window.addEventListener('load',() => {
+    LoadCrocs();
+});

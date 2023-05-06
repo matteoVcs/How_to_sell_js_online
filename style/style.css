@@ -611,5 +611,12 @@ a{
 }
 
 #poubelle{
-    
+    height: 24px;
+    width: 24px;
+}
+
+#poubelle:hover{
+    height: 28px;
+    width: 28px;
+    transition : 0.4s;
 }

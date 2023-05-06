@@ -175,7 +175,7 @@ function addcrocs(id) {
     }else if (croc.imgID == "img_3") {
         imgValue = 2;
     }                                                                                                                                                                       
-    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div class=\"crocPrice\"> "+croc.price+"€ </div> <img src=\"../style/img/trash.png\" id=\"poubelle\" onclick=\"removefromcart("+croc.id+", "+imgValue+")";
+    let tmp = "<img class=\"cart-croc-img\" src=\""+croc[croc.imgID][0]+"\" /> <div> "+croc.name+" </div> <div class=\"cartCrocPrice\"> "+croc.price+"€ </div> <img  id=\"poubelle\" src=\"../style/img/trash.png\" onclick=\"removefromcart("+croc.id+", "+imgValue+")>";
     cartList.push(tmp);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
@@ -190,12 +190,22 @@ function loadcart() {
         crocCart.innerHTML =  cartList[x];
         cartCtn.appendChild(crocCart);
     });
-    let crocPrice = document.getElementsByClassName("crocPrice")
+
     let totalValue = 0;
-    for (let i = 0; i != cartList.lenght; i++) {
-        totalValue += parseFloat(crocPrice[i].innerHTML)
+    let cartCrocPrice = document.getElementsByClassName("cartCrocPrice")
+    console.log (cartCrocPrice.lenght)
+    while(cartCrocPrice) {
+        totalValue += 1
     }
-    cartCtn.innerHTML += "<button class=\"confirmButton\">acheter ("+totalValue+"€)</button>"
+    console.log(totalValue)
+    let tmpvalue = 1
+    if (tmpvalue == 1) {
+        console.log("test")
+        for (let i = 0; i <= cartCrocPrice.lenght; i++) {
+            console.log(parseFloat(cartCrocPrice[i].innerHTML))
+        }
+        cartCtn.innerHTML += "<button class=\"confirmButton\">acheter ("+totalValue+"€)</button>"
+    }
 }
 
 function removefromcart(id, value) {

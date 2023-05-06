@@ -133,12 +133,21 @@ background-size: contain;}
     top: 144px ;
     right: -500px;
     width: 500px;
-    min-height: 100vh;
-    max-height: auto;
+    height: 100vh;
     max-width: 100vw;
     z-index: 9;
     padding-top: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+
+::-webkit-scrollbar {
+    display: none;
+    }
+    
+
+
 
 .open-cart{
     right: 0;

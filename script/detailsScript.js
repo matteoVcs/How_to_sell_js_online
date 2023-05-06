@@ -12,6 +12,7 @@ let MiniCarousselImg = document.getElementsByClassName("MiniCarousselImg")
 
 function loadDetails() {
     const detailsColors = document.querySelector(".detailsColors");
+    const detailsSize = document.querySelector(".detailsSize");
     let color = 0;
     if (newCroc.imgID == "img_1") {
         color = 0;
@@ -23,7 +24,7 @@ function loadDetails() {
     imgId = 0;
     detailsTitle[0].innerHTML = newCroc.name
     detailsPrice[0].innerHTML = newCroc.price+"€";
-    detailsColorName[0].innerHTML = newCroc.colors[color];
+    detailsColorName[0].innerHTML = "color: "+newCroc.colors[color];
     detailsDesc[0].innerHTML = newCroc.description.substr(0, 150) + '\u2026' + "<button class=\"moveDesc\" onclick=\"moveDesc()\">voir plus</button>"
     detailsImg[0].src = newCroc[currColor][imgId];
     for(let i = 0; i != MiniCarousselImg.length; i++) {
@@ -68,7 +69,7 @@ function swapColor(e) {
     for(let i = 0; i != MiniCarousselImg.length; i++) {
         MiniCarousselImg[i].src = newCroc[currColor][i];
     }
-    detailsColorName[0].innerHTML = newCroc.colors[i]
+    detailsColorName[0].innerHTML = "color: "+newCroc.colors[i]
     detailsImg[0].src = newCroc[currColor][imgId];
     
 }

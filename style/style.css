@@ -593,7 +593,7 @@ a{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 141px;
+    margin-top: 160px;
     margin-bottom: 175px;
     
 }
@@ -885,8 +885,7 @@ a{
 }
 
 .MiniCarousselImg:hover{
-    height: 55px;
-    width: 55px;
+    transform: scale(1.2);
 }
 
 .allColors {

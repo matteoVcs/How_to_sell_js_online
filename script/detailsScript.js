@@ -44,7 +44,9 @@ function loadDetails() {
         let sizeCurr = document.createElement("div");
         sizeCurr.classList.add("size");
         sizeCurr.addEventListener("click", () => {
-            console.log("clicked")
+            for (let j = 0; j != detailsSize.children.length; j++) {
+                detailsSize.children[j].classList.remove("size_selected");
+            }
             sizeCurr.classList.toggle("size_selected");
         })
         sizeCurr.innerHTML = newCroc.sizes[i];

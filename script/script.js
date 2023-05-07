@@ -189,6 +189,7 @@ function addcrocs(id) {
 }
 
 function loadcart() {
+    console.log("test");
     let tmp = "<button class=\"vider\" onclick=\"clearCart()\">Vider Le Panier</button>"
     cartCtn.innerHTML = tmp;
     cartList.forEach(function(croc, x) {

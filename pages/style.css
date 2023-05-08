@@ -161,6 +161,7 @@ background-size: contain;}
 .cart-item{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     border-bottom: #000 1px solid;
     padding-bottom: 10px;

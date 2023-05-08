@@ -129,6 +129,14 @@ function SelectItem(e) {
     FilterByColor(color);
 }
 
+
+function SwapCategory(element){
+    element.classList.toggle("Filter");
+}
+
+
+
+
 //Filtrage par couleur
 
 function FilterByColor(color) {

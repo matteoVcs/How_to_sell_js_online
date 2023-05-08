@@ -170,7 +170,7 @@ a{
 
 .titre:hover{
     color: #006da4;
-    transition : 0.1s;
+    transition : 0.5s;
 }
 
 @media screen and (max-width: 946px) {
@@ -803,7 +803,7 @@ a{
     transition : 0.4s;
 }
 .vider{
-    position: relative;
+    position: absolute;
     left: 50%;
     padding-top: 10px;
     border: 2px solid #000000;

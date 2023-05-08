@@ -84,10 +84,26 @@ background-size: contain;}
     width: 100%;
     height: 150px;
     background-color: red;
+    transition: 0.4s;
+}
+.allSort{
+    transition: 0.4s;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+
+
+
 .invisSortList {
-    display: none;
+    height: 0px;
+    transition: 0.5s;
+    overflow: hidden;
 }
 
 .ctn-crocs{

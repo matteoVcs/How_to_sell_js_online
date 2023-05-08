@@ -11,7 +11,7 @@ body{
     display: flex;
     gap:10px;
     cursor: pointer;
-    
+
 }
 
 .round{
@@ -70,8 +70,24 @@ background-size: contain;}
 }
 
 
+
 .selected{
     border: 3px solid green;
+}
+
+.globalCroc {
+    width: 100%;
+    padding-top: 170px;
+}
+
+.sortList {
+    width: 100%;
+    height: 150px;
+    background-color: red;
+}
+
+.invisSortList {
+    display: none;
 }
 
 .ctn-crocs{
@@ -80,8 +96,6 @@ background-size: contain;}
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    padding-top: 150px;
-    
 }
 
 .croc-item{

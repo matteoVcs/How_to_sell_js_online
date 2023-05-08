@@ -135,7 +135,16 @@ function SwapCategory(element){
 }
 
 
-
+function showSortList() {
+    sortList = document.getElementById("sortList")
+    arrow = document.getElementById("arrow")
+    sortList.classList.toggle("invisSortList")
+    if (sortList.classList.contains("invisSortList")) {
+        arrow.innerHTML = "&#8680;"
+    } else {
+        arrow.innerHTML = "&#8681;"
+    }
+}
 
 //Filtrage par couleur
 
@@ -157,16 +166,47 @@ function FilterByColor(color) {
 
 const priceBtnAsc = document.querySelector(".price-btn-asc");
 
+
 if (priceBtnAsc != null) {
     priceBtnAsc.addEventListener("click", sortByPriceAsc);
 }
 
 function compareByPriceAscending (a, b) {
-    return a.price - b.price;
+    tmp1 = a.price
+    tmp2 = b.price
+    if (a.reduction != 0) {
+        tmp1 = a.price-(a.reduction*a.price)/100;
+    }
+    if (b.reduction != 0) {
+        tmp2 = b.price-(b.reduction*b.price)/100;
+    }
+    return tmp1 - tmp2;
 }
 
 function sortByPriceAsc() {
     filteredCrocs.sort(compareByPriceAscending);
+    getCrocs();
+}
+
+const priceBtnDes = document.querySelector(".price-btn-des");
+if (priceBtnDes != null) {
+    priceBtnDes.addEventListener("click", sortByPriceDes);
+}
+
+function compareByPriceDescending (a, b) {
+    tmp1 = a.price
+    tmp2 = b.price
+    if (a.reduction != 0) {
+        tmp1 = a.price-(a.reduction*a.price)/100;
+    }
+    if (b.reduction != 0) {
+        tmp2 = b.price-(b.reduction*b.price)/100;
+    }
+    return tmp2 - tmp1;
+}
+
+function sortByPriceDes() {
+    filteredCrocs.sort(compareByPriceDescending);
     getCrocs();
 }
 

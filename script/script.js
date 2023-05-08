@@ -3,40 +3,59 @@ const container = document.querySelector(".ctn-crocs");
 const pickers = document.querySelectorAll(".picker");
 let crocs;
 let filteredCrocs;
+let catFilters = [{key: 0, value: false}, {key: 1, value: false}, {key: 2, value: false}, {key: 3, value: false}, {key: 4, value: false}]
 
 
 //lancement de la fonction
-console.log(window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString())
+//console.log(window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString())
 
 //chargement des crocs
-function getFilteredCrocs(crocs) {
-    let Window = window.location.pathname.slice(0, window.location.pathname.length-5).split('/').pop().toString()
-    let ret = [];
-    for (let i = 0; i != crocs.length; i++) {
-        if (crocs[i].category.includes(Window)) {
-            ret.push(crocs[i])
-        }
-    }
-    return ret
-}
-
 
 function LoadCrocs() {
     fetch(`${url}/crocs`)
-        .then(response => {
+    .then(response => {
             return response.json();
         })
         .then(data => {
             crocs = data.crocs;
-            filteredCrocs = getFilteredCrocs(crocs);
-            
+            filteredCrocs = crocs;
             getCrocs();
             loadcart();
         })
 }
+    
+function FilterCrocs() {
+    let catTab = ["promo", "femme", "homme", "enfant", "special"]
+    if (catFilters[0].value == false && catFilters[1].value == false && catFilters[2].value == false && catFilters[3].value == false && catFilters[4].value == false) {
+        filteredCrocs = crocs
+    } else {
+        filteredCrocs = []
+        for (let i = 0; i != catFilters.length; i++) {
+            if (catFilters[i].value == true) {
+                for (let j = 0; j != crocs.length; j++) {
+                    if (crocs[j].category.includes(catTab[catFilters[i].key])) {
+                        filteredCrocs.push(crocs[j])
+                    }
+                }
+            }
+        }
+    }
+    getCrocs();
+    loadcart();
+}
+    
+function catFilter(catKey) {
+    for (let i = 0; i != catFilters.length; i++) {
+        if (catFilters[i].key == catKey) {
+            catFilters[i].value = !catFilters[i].value
+        }
+    }
+    FilterCrocs()
+}
 
 //récupération des crocs
 function getCrocs() {
+    console.log(filteredCrocs)
     container.innerHTML = "";
     filteredCrocs.forEach(function(croc, x)  {
         let tmp = "";
@@ -67,7 +86,6 @@ function getCrocs() {
 
 
 var details = JSON.parse(localStorage.getItem("details")) || [];
-console.log(details)
 function Details(id) {
     let croc = crocs.find(croc => croc.id === id);
     details = croc;
@@ -189,7 +207,6 @@ function addcrocs(id) {
 }
 
 function loadcart() {
-    console.log("test");
     let tmp = "<button class=\"vider\" onclick=\"clearCart()\">Vider Le Panier</button>"
     cartCtn.innerHTML = tmp;
     cartList.forEach(function(croc, x) {

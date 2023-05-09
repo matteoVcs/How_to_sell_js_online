@@ -19,28 +19,29 @@ function LoadCrocs() {
         .then(data => {
             crocs = data.crocs;
             filteredCrocs = crocs;
-            getCrocs();
+            getCrocs(crocs);
             loadcart();
         })
 }
     
 function FilterCrocs(crocs) {
     let catTab = ["promo", "femme", "homme", "enfant", "special"]
+    let tmp = []
     if (catFilters[0].value == false && catFilters[1].value == false && catFilters[2].value == false && catFilters[3].value == false && catFilters[4].value == false) {
-        filteredCrocs = crocs
+        tmp = crocs
     } else {
-        filteredCrocs = []
+        tmp = []
         for (let i = 0; i != catFilters.length; i++) {
             if (catFilters[i].value == true) {
                 for (let j = 0; j != crocs.length; j++) {
                     if (crocs[j].category.includes(catTab[catFilters[i].key])) {
-                        filteredCrocs.push(crocs[j])
+                        tmp.push(crocs[j])
                     }
                 }
             }
         }
     }
-    getCrocs();
+    getCrocs(tmp);
     loadcart();
 }
     
@@ -54,8 +55,7 @@ function catFilter(catKey) {
 }
 
 //récupération des crocs
-function getCrocs() {
-    console.log(filteredCrocs)
+function getCrocs(filteredCrocs) {
     container.innerHTML = "";
     filteredCrocs.forEach(function(croc, x)  {
         let tmp = "";
@@ -117,16 +117,28 @@ pickers.forEach(picker => {
     picker.addEventListener("click", SelectItem);
 });
 
+var color = [];
 function SelectItem(e) {
     let picker = e.target;
-    let color = e.target.classList[2];
+    if (color.includes(e.target.classList[2]) && e.target.classList[2] != "all") {
+        color.splice(color.indexOf(e.target.classList[2]), 1)
+        if (color.length == 0) {
+            color = ["all"]
+        }
+    } else {
+        if (e.target.classList[2] != "all" && color.includes("all")) {
+            color.splice(color.indexOf("all"), 1)
+        } else if (e.target.classList[2] == "all") {
+            color = []
+        }
+        color.push(e.target.classList[2]);
+    }
+    console.log(color)
     pickers.forEach((e) => {
         e.classList.remove("selected");
 
     });
     picker.classList.add("selected");
-
-    console.log(color);
     FilterByColor(color);
 }
 
@@ -150,16 +162,21 @@ function showSortList() {
 //Filtrage par couleur
 
 function FilterByColor(color) {
-    let filteredCrocs = []
-    if (color === "all") {
-        filteredCrocs = crocs;
+    console.log(filteredCrocs)
+    let crocTab = []
+    if (color[0] === "all") {
+        crocTab = crocs;
     } else {
-        filteredCrocs = crocs.filter((croc) => croc.colors[0] === color || croc.colors[1] === color || croc.colors[2] === color);
-        if (filteredCrocs.length <= 0) {
-            container.innerHTML = "Aucun résultat";
+        for (let i = 0; i <= color.length-1; i++) {
+            for (let j = 0; j <= filteredCrocs.length-1; j++) {
+                
+                if (filteredCrocs[j].colors.includes(color[i]) && !crocTab.includes(filteredCrocs[j])) {
+                    crocTab.push(filteredCrocs[j])
+                }
+            }
         }
     }
-    FilterCrocs(filteredCrocs)
+    FilterCrocs(crocTab)
 }
 
 //Tri par prix
@@ -185,7 +202,7 @@ function compareByPriceAscending (a, b) {
 
 function sortByPriceAsc() {
     filteredCrocs.sort(compareByPriceAscending);
-    getCrocs();
+    getCrocs(filteredCrocs);
 }
 
 const priceBtnDes = document.querySelector(".price-btn-des");
@@ -207,7 +224,7 @@ function compareByPriceDescending (a, b) {
 
 function sortByPriceDes() {
     filteredCrocs.sort(compareByPriceDescending);
-    getCrocs();
+    getCrocs(filteredCrocs);
 }
 
 //toggle 

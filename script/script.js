@@ -124,12 +124,18 @@ function SelectItem(e) {
         color.splice(color.indexOf(e.target.classList[2]), 1)
         if (color.length == 0) {
             color = ["all"]
+            pickers.forEach((e) => {
+                e.classList.remove("selected");
+            });
         }
     } else {
         if (e.target.classList[2] != "all" && color.includes("all")) {
             color.splice(color.indexOf("all"), 1)
         } else if (e.target.classList[2] == "all") {
             color = []
+            pickers.forEach((e) => {
+                e.classList.remove("selected");
+            });
         }
         color.push(e.target.classList[2]);
     }
@@ -165,7 +171,6 @@ function FilterByColor(color) {
     } else {
         for (let i = 0; i <= color.length-1; i++) {
             for (let j = 0; j <= filteredCrocs.length-1; j++) {
-                
                 if (filteredCrocs[j].colors.includes(color[i]) && !crocTab.includes(filteredCrocs[j])) {
                     crocTab.push(filteredCrocs[j])
                 }

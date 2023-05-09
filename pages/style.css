@@ -113,8 +113,17 @@ background-size: contain;}
     user-select: none;
     transition: 0.4s;
     margin-right: 50px;
+    box-shadow: #000000 2px 2px 2px 2px;
     
 
+}
+
+.picker{
+    box-shadow: #000 2px 2px 2px 2px;
+}
+
+.all{
+    color : black;
 }
 .price-btn-des:hover, .price-btn-asc:hover{
     background-color: #000000;

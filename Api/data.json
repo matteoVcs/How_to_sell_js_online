@@ -483,6 +483,75 @@
             "available": true,
             "sizes": [35,36,37,38,39,40,41,42]
         }
+        ,
+        {
+            "id": 34,
+            "imgID": "img_1",
+            "name": "Crocs Classic Clog KFC",
+            "category": ["femme","homme","special"],
+            "price": 764,
+            "colors": ["white"],
+            "reduction": 0,
+            "description":"Les Crocs KFC sont une collaboration unique entre Crocs et KFC. Ces chaussures présentent un design original avec une empeigne recouverte de motifs de poulet frit et des trous d'aération en forme de seaux de poulet KFC. La semelle intérieure est ornée de l'emblématique logo KFC, tandis que la semelle extérieure en caoutchouc assure un confort de marche optimal. Ces chaussures sont parfaites pour les fans de la célèbre chaîne de restauration rapide, ainsi que pour ceux qui aiment ajouter une touche ludique à leur style.",
+            "img_1": ["../Crocs/Special/Crocs_KFC1.PNG", "../Crocs/Special/Crocs_KFC2.PNG", "../Crocs/Special/Crocs_KFC3.PNG"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        }
+        ,
+        {
+            "id": 35,
+            "imgID": "img_1",
+            "name": "Crocs Minecraft",
+            "category": ["femme","homme","special"],
+            "price": 59.99,
+            "colors": ["green"],
+            "reduction": 0,
+            "description":"Les Crocs Minecraft sont le rêve de tout fan du célèbre jeu vidéo. Avec leur design inspiré du jeu, les sandales présentent une tige en résine légère avec des graphismes de blocs et de personnages Minecraft emblématiques. Les trous d'aération en forme de Creeper offrent une circulation d'air optimale pour un confort maximal, tandis que la semelle extérieure en caoutchouc assure une adhérence solide. Ces sandales sont parfaites pour les joueurs de Minecraft qui veulent montrer leur amour pour le jeu, tout en restant confortables et à la mode.",
+            "img_1": ["../Crocs/Special/Crocs_Mc1.jpg", "../Crocs/Special/Crocs_Mc2.jpg", "../Crocs/Special/Crocs_Mc3.jpg"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        }
+        ,
+        {
+            "id": 36,
+            "imgID": "img_1",
+            "name": "Crocs Black Panter",
+            "category": ["femme","homme","special"],
+            "price": 51.24,
+            "colors": ["black"],
+            "reduction": 0,
+            "description":"Les Crocs Black Panther sont une collaboration inspirée du personnage de Marvel. Ces sandales présentent une tige en résine noire avec des graphismes métalliques de la panthère noire. Les trous d'aération en forme de griffes ajoutent une touche ludique au design, tandis que la semelle extérieure en caoutchouc offre une adhérence solide. Les sandales sont dotées d'une bride ajustable pour un maintien sûr et confortable. Ces chaussures sont parfaites pour les fans de Black Panther qui cherchent à ajouter une touche de style inspirée de leur personnage préféré.",
+            "img_1": ["../Crocs/Special/Crocs_BP1.jpg" , "../Crocs/Special/Crocs_BP2.jpg", "../Crocs/Special/Crocs_BP3.jpg"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        }
+        ,
+        {
+            "id": 37,
+            "imgID": "img_1",
+            "name": "Crocs Clog LBB",
+            "category": ["femme","homme","special"],
+            "price": 268,
+            "colors": ["black"],
+            "reduction": 0,
+            "description":"Les Crocs Gothic sont une version sombre et élégante de la célèbre chaussure confortable. Avec leur tige en résine noire, ces sandales présentent un design minimaliste avec des détails de croix et de crânes gothiques gravés sur la semelle intérieure. Les trous d'aération offrent une circulation d'air optimale pour un confort maximal, tandis que la semelle extérieure en caoutchouc assure une adhérence solide. Ces sandales sont parfaites pour les amateurs de mode gothique qui cherchent à ajouter une touche sombre à leur style décontracté.",
+            "img_1": ["../Crocs/Special/Gothic1.PNG", "../Crocs/Special/Gothic2.PNG", "../Crocs/Special/Gothic3.PNG"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        },
+        {
+            "id": 38,
+            "imgID": "img_1",
+            "name": "Crocs Benitier Bleu",
+            "category": ["homme","special"],
+            "price": 50.78,
+            "colors": ["blue"],
+            "reduction": 0,
+            "description":"Les Crocs Océan sont des chaussures parfaites pour les amateurs de la mer et de l'océan. Avec leur design original, ces sandales présentent des graphismes d'océan sur la tige en résine légère. Les trous d'aération offrent une circulation d'air optimale pour un confort maximal, tandis que la semelle extérieure en caoutchouc assure une adhérence solide. Les sandales sont dotées d'une bride ajustable pour un maintien sûr et confortable. Ces chaussures sont parfaites pour les passionnés de la vie marine qui cherchent à ajouter une touche de style décontracté et original à leur tenue.",
+            "img_1": ["../Crocs/Special/Benitier1.webp", "../Crocs/Special/Benitier2.webp", "../Crocs/Special/Benitier3.webp"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        }
 
     ]
     

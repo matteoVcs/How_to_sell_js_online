@@ -102,9 +102,7 @@ background-size: contain;}
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.price-btn-asc{
-    margin-right: 50px;
-}
+
 .price-btn-des ,.price-btn-asc{
     margin-top: 10px;
     border: 2px solid #000000;
@@ -114,6 +112,7 @@ background-size: contain;}
     cursor: pointer;
     user-select: none;
     transition: 0.4s;
+    margin-right: 50px;
     
 
 }

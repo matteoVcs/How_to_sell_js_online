@@ -24,7 +24,7 @@ function LoadCrocs() {
         })
 }
     
-function FilterCrocs() {
+function FilterCrocs(crocs) {
     let catTab = ["promo", "femme", "homme", "enfant", "special"]
     if (catFilters[0].value == false && catFilters[1].value == false && catFilters[2].value == false && catFilters[3].value == false && catFilters[4].value == false) {
         filteredCrocs = crocs
@@ -50,7 +50,7 @@ function catFilter(catKey) {
             catFilters[i].value = !catFilters[i].value
         }
     }
-    FilterCrocs()
+    FilterCrocs(crocs)
 }
 
 //récupération des crocs
@@ -150,6 +150,7 @@ function showSortList() {
 //Filtrage par couleur
 
 function FilterByColor(color) {
+    let filteredCrocs = []
     if (color === "all") {
         filteredCrocs = crocs;
     } else {
@@ -158,9 +159,7 @@ function FilterByColor(color) {
             container.innerHTML = "Aucun résultat";
         }
     }
-    
-    
-    
+    FilterCrocs(filteredCrocs)
 }
 
 //Tri par prix

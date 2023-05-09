@@ -72,6 +72,7 @@ function moveElem(i) {
 }
 
 function swapElem(i) {
+    console.log("test")
     let detailsImg = document.getElementsByClassName("carousselImg");
     imgId = i
     detailsImg[0].src = newCroc[currColor][i];

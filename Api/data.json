@@ -423,29 +423,55 @@
             "img_3": ["../Crocs/Kid's_Handle_It_Rain_Boot/Kid_handle_it_rain_boot_cerulean1.webp", "../Crocs/Kid's_Handle_It_Rain_Boot/Kid_handle_it_rain_boot_cerulean2.webp", "../Crocs/Kid's_Handle_It_Rain_Boot/Kid_handle_it_rain_boot_cerulean3.webp"],
             "available": true,
             "sizes": [22,23,24,25,26,27,28, 29, 30, 31, 32, 33, 34, 35]
+        },
+        {
+            "id": 30,
+            "imgID": "img_1",
+            "name": "Crocs Balenciaga",
+            "category": ["femme","special"],
+            "price": 499.99,
+            "colors": ["green", "black", "white"],
+            "reduction": 0,
+            "description":"Les crocs Balenciaga sont une paire de chaussures confortables et stylées, dotées d'une semelle épaisse en caoutchouc et d'une bride arrière pour maintenir le pied en place. Elles présentent un design minimaliste avec le logo de la marque sur la bride et sont disponibles dans une variété de couleurs vives. Ces chaussures sont parfaites pour les occasions décontractées et les moments de détente.",
+            "img_1": ["../Crocs/Special/balenciaga1.webp", "../Crocs/Special/balenciaga2.webp", "../Crocs/Special/balenciaga3.webp"],
+            "img_2": ["../Crocs/Special/balenciaga_noir1.webp", "../Crocs/Special/balenciaga_noir2.webp", "../Crocs/Special/balenciaga_noir3.webp"],
+            "img_3": ["../Crocs/Special/balenciaga_blanc1.webp", "../Crocs/Special/balenciaga_blanc2.webp", "../Crocs/Special/balenciaga_blanc3.webp"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
         }
-    ],
-    "category": [
+        ,
         {
-            "id": 0,
-            "name": "Promo"
-        },
-        {
-            "id": 1,
-            "name": "Femme"
-        },
-        {
-            "id": 2,
-            "name": "Homme"
-        },
-        {
-            "id": 3,
-            "name": "Enfant"
-        },
-        {
-            "id": 3,
-            "name": "Special"
+            "id": 31,
+            "imgID": "img_1",
+            "name": "Crocs botte Balenciaga",
+            "category": ["femme","special"],
+            "price": 750,
+            "colors": ["grey", "pink", "black"],
+            "reduction": 0,
+            "description":"Les bottes Crocs Balenciaga sont un mélange de style et de confort. Fabriquées à partir de matériaux de haute qualité, elles présentent une silhouette élégante avec une semelle en caoutchouc et une tige en cuir souple. Les bottes sont dotées d'un col rembourré pour un confort optimal et d'une fermeture éclair latérale pour un enfilage facile. Le logo Balenciaga est discrètement imprimé sur le côté de la botte, ajoutant une touche de sophistication à l'ensemble. Ces bottes sont parfaites pour ajouter une touche de style à une tenue décontractée ou pour un look plus chic.",
+            "img_1": ["../Crocs/Special/botte_immonde_grey1.webp", "../Crocs/Special/botte_immonde_grey2.webp", "../Crocs/Special/botte_immonde_grey3.webp"],
+            "img_2": ["../Crocs/Special/botte_immonde_pink1.jpg", "../Crocs/Special/botte_immonde_pink2.webp", "../Crocs/Special/botte_immonde_pink3.webp"],
+            "img_3": ["../Crocs/Special/botte_immonde_black1.jpg", "../Crocs/Special/botte_immonde_black2.jpg", "../Crocs/Special/botte_immonde_black3.jpg"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
         }
+        ,
+        {
+            "id": 32,
+            "imgID": "img_1",
+            "name": "Crocs botte Balenciaga",
+            "category": ["femme","special"],
+            "price": 750,
+            "colors": ["grey", "pink", "black"],
+            "reduction": 0,
+            "description":"Les bottes Crocs Balenciaga sont un mélange de style et de confort. Fabriquées à partir de matériaux de haute qualité, elles présentent une silhouette élégante avec une semelle en caoutchouc et une tige en cuir souple. Les bottes sont dotées d'un col rembourré pour un confort optimal et d'une fermeture éclair latérale pour un enfilage facile. Le logo Balenciaga est discrètement imprimé sur le côté de la botte, ajoutant une touche de sophistication à l'ensemble. Ces bottes sont parfaites pour ajouter une touche de style à une tenue décontractée ou pour un look plus chic.",
+            "img_1": ["../Crocs/Special/botte_immonde_grey1.webp", "../Crocs/Special/botte_immonde_grey2.webp", "../Crocs/Special/botte_immonde_grey3.webp"],
+            "img_2": ["../Crocs/Special/botte_immonde_pink1.jpg", "../Crocs/Special/botte_immonde_pink2.webp", "../Crocs/Special/botte_immonde_pink3.webp"],
+            "img_3": ["../Crocs/Special/botte_immonde_black1.jpg", "../Crocs/Special/botte_immonde_black2.jpg", "../Crocs/Special/botte_immonde_black3.jpg"],
+            "available": true,
+            "sizes": [35,36,37,38,39,40,41,42]
+        }
+
     ]
     
   }

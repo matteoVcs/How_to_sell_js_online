@@ -75,7 +75,7 @@ function getCrocs() {
         <div class="nom-croc"> ${croc.name} </div>
         <div class="crocPrice"> ${price} </div>
         <div onclick="addcrocs(${croc.id})" class="ajout"> Ajouter au panier </div>
-        <a href="details.html" class="crocsDetails"target="blank" onclick="Details(${croc.id})">détails</a>
+        <a href="details.html" class="crocsDetails"target="" onclick="Details(${croc.id})">détails</a>
         <div class ="color-picker-ctn">
             ${tmp}
         </div>`;
@@ -87,6 +87,7 @@ function getCrocs() {
 
 var details = JSON.parse(localStorage.getItem("details")) || [];
 function Details(id) {
+
     let croc = crocs.find(croc => croc.id === id);
     details = croc;
     localStorage.setItem("details", JSON.stringify(details));

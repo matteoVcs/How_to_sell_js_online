@@ -134,11 +134,7 @@ function SelectItem(e) {
         color.push(e.target.classList[2]);
     }
     console.log(color)
-    pickers.forEach((e) => {
-        e.classList.remove("selected");
-
-    });
-    picker.classList.add("selected");
+    picker.classList.toggle("selected");
     FilterByColor(color);
 }
 

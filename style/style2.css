@@ -140,6 +140,16 @@ background-size: contain;}
     overflow: hidden;
 }
 
+.filtersdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterSort {
+    display: flex;
+    flex-direction: row;
+}
+
 .ctn-crocs{
     width: 100%;
     display: flex;

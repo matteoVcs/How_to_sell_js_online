@@ -21,27 +21,60 @@ function LoadCrocs() {
             filteredCrocs = crocs;
             getCrocs(crocs);
             loadcart();
+            loadSize()
         })
 }
-    
+
+
+// const sizeTab = []
+// function loadSize() {
+//     const sizeTabAll = [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51]
+//     const detailsSize = document.querySelector(".detailsSize");
+//     for (let i = 0; i != sizeTabAll.length; i++) {
+//         let sizeCurr = document.createElement("div");
+//         sizeCurr.classList.add("size");
+//         sizeCurr.addEventListener("click", sortBySize)
+//         sizeCurr.innerHTML = sizeTabAll[i];
+//         detailsSize.appendChild(sizeCurr);
+//     }
+// }
+
+// function sortBySize(e) {
+//     e.target.classList.toggle("size_selected");
+//     if (sizeTab.includes(parseInt(e.target.innerHTML))) {
+//         sizeTab.splice(sizeTab.indexOf(parseInt(e.target.innerHTML)), 1)
+//         if (sizeTab.length == 0) {
+//             filteredCrocs = crocs
+//             FilterCrocs(filteredCrocs)
+//             return
+//         }
+//     } else {
+//         sizeTab.push(parseInt(e.target.innerHTML))
+//     }   
+//     console.log(sizeTab)
+//     filteredCrocs = crocs.filter(item => item.sizes.some(size => sizeTab.includes(size)));
+//     FilterCrocs(filteredCrocs)
+// }
+
 function FilterCrocs(crocs) {
     let catTab = ["promo", "femme", "homme", "enfant", "special"]
-    let tmp = []
+    let cat = []
     if (catFilters[0].value == false && catFilters[1].value == false && catFilters[2].value == false && catFilters[3].value == false && catFilters[4].value == false) {
-        tmp = crocs
+        cat = crocs
     } else {
-        tmp = []
+        cat = []
         for (let i = 0; i != catFilters.length; i++) {
             if (catFilters[i].value == true) {
                 for (let j = 0; j != crocs.length; j++) {
                     if (crocs[j].category.includes(catTab[catFilters[i].key])) {
-                        tmp.push(crocs[j])
+                        cat.push(crocs[j])
                     }
                 }
             }
         }
     }
-    getCrocs(tmp);
+    filteredCrocs = cat
+    getCrocs(filteredCrocs);
     loadcart();
 }
     
@@ -117,7 +150,7 @@ pickers.forEach(picker => {
     picker.addEventListener("click", SelectItem);
 });
 
-var color = [];
+var color = ["all"];
 function SelectItem(e) {
     let picker = e.target;
     if (color.includes(e.target.classList[2]) && e.target.classList[2] != "all") {
@@ -127,10 +160,12 @@ function SelectItem(e) {
             pickers.forEach((e) => {
                 e.classList.remove("selected");
             });
+            pickers[0].classList.add("selected")
         }
     } else {
         if (e.target.classList[2] != "all" && color.includes("all")) {
             color.splice(color.indexOf("all"), 1)
+            pickers[0].classList.remove("selected")
         } else if (e.target.classList[2] == "all") {
             color = []
             pickers.forEach((e) => {
@@ -141,7 +176,8 @@ function SelectItem(e) {
     }
     console.log(color)
     picker.classList.toggle("selected");
-    FilterByColor(color);
+    filteredCrocs = FilterByColor(color);
+    getCrocs(filteredCrocs)
 }
 
 
@@ -163,21 +199,13 @@ function showSortList() {
 
 //Filtrage par couleur
 
-function FilterByColor(color) {
-    console.log(filteredCrocs)
-    let crocTab = []
-    if (color[0] === "all") {
-        crocTab = crocs;
+function FilterByColor(colors) {
+    if (colors.includes("all")) {
+        filteredCrocs = crocs
     } else {
-        for (let i = 0; i <= color.length-1; i++) {
-            for (let j = 0; j <= filteredCrocs.length-1; j++) {
-                if (filteredCrocs[j].colors.includes(color[i]) && !crocTab.includes(filteredCrocs[j])) {
-                    crocTab.push(filteredCrocs[j])
-                }
-            }
-        }
+        filteredCrocs = crocs.filter(item => item.colors.some(color => colors.includes(color)));
     }
-    FilterCrocs(crocTab)
+    return(filteredCrocs)
 }
 
 //Tri par prix

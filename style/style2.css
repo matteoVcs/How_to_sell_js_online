@@ -41,17 +41,17 @@ body{
 .garnet{background-color: #833741;}
 .juice{background-color: #E364AE;}
 .charcoal{background-color: #A9A9A9;}
-.multi{background-image: url("/Crocs/Other/multi.PNG");
+.multi{background-image: url("../Crocs/Other/multi.PNG");
     background-size: contain;}
 .neon{background-color: #44207e;}
 .espresso{background-color: #79706e;}
 .pistachio{background-color:#ccdae5 ;}
 .blossom{background-color: #d79a98;}
-.limeade{background-image: url("/Crocs/Other/limeade.PNG");
+.limeade{background-image: url("../Crocs/Other/limeade.PNG");
     background-size: contain;}
-.chai{background-image: url("/Crocs/Other/chai.PNG");
+.chai{background-image: url("../Crocs/Other/chai.PNG");
 background-size: contain;}
-.denim{background-image: url("/Crocs/Other/denim.PNG");
+.denim{background-image: url("../Crocs/Other/denim.PNG");
     background-size: contain;}
 
 
@@ -125,6 +125,7 @@ background-size: contain;}
 .all{
     color : black;
 }
+
 .price-btn-des:hover, .price-btn-asc:hover{
     background-color: #000000;
     color: #ffffff;
@@ -179,7 +180,7 @@ background-size: contain;}
     margin-left: 40px;
     height: 35px;
     width:35px;
-    background-image: url("../style/img/panier.png");
+    background-image: url("img/panier.png");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
